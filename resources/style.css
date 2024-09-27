@@ -1,0 +1,113 @@
+@font-face {
+  font-family: Couture;
+  src: url('./font/couture-bld.otf');
+}
+
+html {
+  font-family: Couture, Arial, Helvetica, sans-serif;
+  font-size: clamp(5px, 3vw, 40px);
+  height: 100%;
+}
+
+body {
+  text-align: center;
+  height: calc(100% - 4rem);
+  margin: 0;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0 0 0.3rem 0;
+}
+
+main {
+  position: relative;
+  display: flex;
+  height: calc(100% - 4.3rem);
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+#choice-container {
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.choice {
+  overflow: hidden;
+  width: 20%;
+  border-radius: 10%;
+  transition: ease-in 100ms;
+  /* Disable highlight selection on touch devices */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.choice:hover {
+  transform: scale(1.1);
+}
+
+.choice:active {
+  transform: translateY(5%);
+}
+
+#round-result {
+  font-size: 3rem;;
+}
+
+/* This is not in the html by default */
+#reset-btn {
+  color: red;
+  cursor: pointer;
+  /* Disable highlight selection on touch devices */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#reset-btn:hover {
+  color: purple;
+}
+
+@media screen and (orientation: portrait) {
+  h1 {
+    font-size: 3rem;;
+  }
+
+  /* Compensate for text wrapping of header */
+  /* main {
+    height: calc(100% - 8.3rem);
+  } */
+
+  #choice-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 4vh;
+    grid-template-areas: 
+      "rock rock"
+      "paper scissors";
+    justify-items: center;
+    align-items: center;
+  }
+
+  .choice {
+    width: 20vh;
+    height: 20vh;
+  }
+
+  #rock-btn {
+    grid-area: rock;
+  }
+
+  #paper-btn {
+    grid-area: paper;
+  }
+
+  #scissors-btn {
+    grid-area: scissors;
+  }
+}

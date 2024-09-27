@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./resources/style.css" rel="stylesheet" type="text/css" />
+    <title>Rock Paper Scissors Game</title>
+  </head>
+  <body>
+    <header>
+      <h1>CHOOSE WISELY</h1>
+    </header>
+    
+    <main>
+      <!-- Selection buttons -->
+      <div id="choice-container">
+        <img class="choice" id="rock-btn" src="./resources/pictures/rock.webp" alt="Rock"/>
+        <img class="choice" id="paper-btn" src="./resources/pictures/paper.webp" alt="Paper" />
+        <img class="choice" id="scissors-btn" src="./resources/pictures/scissors.webp" alt="Scissors" />
+      </div>
+      <div id="computer-choice"></div>
+        <!-- Result of a round is displayed. No content by default. Javascript will determine the content -->
+      </div>
+      <div id="round-result">
+        <!-- Result of a round is displayed. No content by default. Javascript will determine the content -->
+      </div>
+      <div id="tally">
+        <!-- Running results are displayed. Javascript will determine the content, below is default content -->
+        TOTAL WINS: 0 LOSSES: 0 DRAWS: 0
+      </div>
+    </main>
+    
+    <footer>
+
+    </footer>
+    
+    <script src="./resources/game.js"></script>
+  </body>
+</html>
