@@ -15,9 +15,6 @@ const roundResult = document.getElementById('round-result');
 // Get div for recording win/loss/draw tally
 const tally = document.getElementById('tally');
 
-// Creates a clickable reset feature
-// const reset = '<span onclick="resetTally()">RESET</span>';
-
 // Adds event listener to rock, paper, and scissors buttons
 for (let i = 0; i < choices.length; i++) {
   choices[i].addEventListener('click', event => {
@@ -42,6 +39,8 @@ function playRound(playerChoice) {
     case 2:
       computerChoice.innerHTML = 'I CHOOSE SCISSORS';
       break;
+    default:
+      alert('Something went wrong, invalid computer choice perhaps');
   }
 
   // Compare with player choice
@@ -64,7 +63,7 @@ function playRound(playerChoice) {
           roundResult.innerHTML = 'YOU WIN!';
           break;
         default:
-          alert('There seems to be an error')
+          alert('There seems to be an error, invalid choice perhaps');
       }
       break;
     case 'paper-btn':
@@ -85,7 +84,7 @@ function playRound(playerChoice) {
           roundResult.innerHTML = 'YOU LOSE!';
           break;
         default:
-          alert('There seems to be an error')
+          alert('There seems to be an error, invalid choice perhaps');
       }
       break;
     case 'scissors-btn':
@@ -106,20 +105,21 @@ function playRound(playerChoice) {
           roundResult.innerHTML = 'DRAW!';
           break;
         default:
-          alert('There seems to be an error')
+          alert('There seems to be an error, invalid choice perhaps');
       }
       break;
     default:
-      alert('There seems to be an error');
+      alert('There seems to be an error, invalid choice perhaps');
   }
 
-  // Displays win/loss/draw tally
+  // Displays win/loss/draw tally, and shows reset button
   tally.innerHTML = `
     TOTAL WINS: ${wonRounds} LOSSES: ${lostRounds} DRAWS: ${drawnRounds}
     <span id="reset-btn" onclick="resetTally()">RESET</span>
   `
 }
 
+// Resets the tally when user selects 'RESET'
 function resetTally() {
   computerChoice.innerHTML = '';
   roundResult.innerHTML = '';

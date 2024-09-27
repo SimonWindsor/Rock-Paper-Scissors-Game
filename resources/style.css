@@ -39,6 +39,7 @@ main {
   overflow: hidden;
   width: 20%;
   border-radius: 10%;
+  box-shadow: 0.5rem 0.5rem rgba(175, 142, 142, 0.1);
   transition: ease-in 100ms;
   /* Disable highlight selection on touch devices */
   -webkit-user-select: none;
