@@ -1,6 +1,6 @@
 @font-face {
   font-family: Couture;
-  src: url('./font/couture-bld.otf');
+  src: url('./pictures\ and\ fonts/couture-bld.otf');
 }
 
 html {
@@ -36,7 +36,6 @@ main {
 }
 
 .choice {
-  overflow: hidden;
   width: 20%;
   border-radius: 10%;
   box-shadow: 0.5rem 0.5rem rgba(175, 142, 142, 0.1);
@@ -77,11 +76,6 @@ main {
   h1 {
     font-size: 3rem;;
   }
-
-  /* Compensate for text wrapping of header */
-  /* main {
-    height: calc(100% - 8.3rem);
-  } */
 
   #choice-container {
     display: grid;
